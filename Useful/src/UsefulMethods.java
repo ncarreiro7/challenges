@@ -2,10 +2,11 @@ public class UsefulMethods {
 
 	public static void main(String[] args) {
 
-		int value = 6; // change me
+		int value = 3; // change me
 
 		System.out.println("Fibonacci " + value + " element:" + fibonacciRecursive(value));
 		System.out.println("Fibonacci " + value + " element:" + fibonacciIter(value));
+		System.out.println("Is " + value + " prime? " + isPrime(value));
 	}
 
 	/**
@@ -47,4 +48,26 @@ public class UsefulMethods {
 		
 		return res;
 	}
+	
+	/**
+	 * Check if a number is prime in an efficient way
+	 * @param n the number to see if it is prime or not
+	 * @return true is n is prime false otherwise
+	 */
+	public static boolean isPrime(int n){
+		
+		if(n == 2 )
+			return true;
+		if(n%2 ==0)
+			return false;
+		
+		for(int i = 3; i<n;i+=2){
+			if(n%i == 0)
+				return false;
+		}
+		return true;
+		
+	}
+	
+	
 }
