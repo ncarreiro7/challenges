@@ -2,14 +2,21 @@ public class UsefulMethods {
 
 	public static void main(String[] args) {
 
-		int value = 3; // change me
+		int value = 10; // change me
+		int v[] = { 1, 2, 3, 4, 5 };// change me
+		String s = "DUMMY"; // change me
 
-		int v[] = { 1, 2, 3, 4, 5 };
 		System.out.println("Fibonacci " + value + " element:" + fibonacciRecursive(value));
 		System.out.println("Fibonacci " + value + " element:" + fibonacciIter(value));
 		System.out.println("Is " + value + " prime? " + isPrime(value));
 		System.out.println("Array: " + vectorToString(v));
+		System.out.println("Reversed Array: " + vectorToString(reverseArray(v)));
 		System.out.println("Swap array first element with last: " + vectorToString(swap(v, 0, 4)));
+		System.out.println("Original String: " + s);
+		System.out.println("Reversed String: " + reverse(s));
+		System.out.println("Reversed int: " + reverseInt(value));
+		System.out.println("Factorial of " + value + ": " + factorialRecursive(value));
+		System.out.println("Factorial of " + value + ": " + factorialIter(value));
 	}
 
 	/**
@@ -95,6 +102,22 @@ public class UsefulMethods {
 	}
 
 	/**
+	 * Reverses an array order
+	 * 
+	 * @param v
+	 *            the array to be reversed
+	 * @return the array reversed
+	 */
+	public static int[] reverseArray(int[] v) {
+		int r[] = new int[v.length];
+
+		for (int i = 0; i < v.length; i++) {
+			r[i] = v[v.length - 1 - i];
+		}
+		return r;
+	}
+
+	/**
 	 * Prints an array in a single line
 	 * 
 	 * @param v
@@ -112,4 +135,58 @@ public class UsefulMethods {
 		return sb.toString();
 	}
 
+	/**
+	 * Dummy method to reverse a string with stringbuilder
+	 * 
+	 * @param s
+	 *            the string to be reversed
+	 * @return the s string reversed
+	 */
+	public static String reverse(String s) {
+		StringBuilder sb = new StringBuilder(s);
+		return sb.reverse().toString();
+	}
+
+	/**
+	 * Reverses a number
+	 * 
+	 * @param v
+	 *            the number to be reversed
+	 * @return the reversed value
+	 */
+	public static int reverseInt(int v) {
+
+		return Integer.parseInt(reverse(Integer.toString(v)));
+	}
+
+	/**
+	 * Recursive Method that calculates the factorial value of a number
+	 * 
+	 * @param v
+	 *            the number to calculate the factorial
+	 * @return the factorial value of v
+	 */
+	public static int factorialRecursive(int v) {
+
+		if (v == 1)
+			return 1;
+
+		return v * factorialRecursive(v - 1);
+	}
+
+	/**
+	 * Iterative Method that calculates the factorial value of a number
+	 * 
+	 * @param v
+	 *            the number to calculate the factorial
+	 * @return the factorial value of v
+	 */
+	public static int factorialIter(int v) {
+
+		int res = 1;
+		for (int i = v; i > 0; i--) {
+			res *= i;
+		}
+		return res;
+	}
 }
