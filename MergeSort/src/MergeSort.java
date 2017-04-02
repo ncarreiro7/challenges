@@ -11,6 +11,15 @@ public class MergeSort {
 			System.out.print(v[i] + " ");
 	}
 
+	/**
+	 * A method that sorts an array using the merge sort algorithm The first
+	 * part of this method splits the array and then calls the merge method to
+	 * order the elements of each splitted array
+	 * 
+	 * @param v
+	 *            the array to be sorted
+	 * @return a sorted array
+	 */
 	private static int[] mergeSort(int[] v) {
 
 		if (v.length == 1)
@@ -29,6 +38,15 @@ public class MergeSort {
 		return merge(v1, v2);
 	}
 
+	/**
+	 * A method that sorts two arrays into one sorted array
+	 * 
+	 * @param v1
+	 *            part of the array to be sorted
+	 * @param v2
+	 *            other part to be sorted
+	 * @return a single sorted array
+	 */
 	private static int[] merge(int[] v1, int[] v2) {
 
 		int[] res = new int[v1.length + v2.length];
