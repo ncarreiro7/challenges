@@ -1,3 +1,4 @@
+package com.nnc.tetris;
 import java.util.Random;
 
 public class Shape {
