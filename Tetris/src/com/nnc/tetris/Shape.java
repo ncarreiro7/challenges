@@ -85,13 +85,44 @@ public class Shape {
 	public int minY(){
 		int min = coords[0][1];
 		
-		for (int i =0; i < Y; i++){
+		for (int i = 0; i < Y; i++){
 			min = Math.min(min, coords[i][1]);
 		}
 		
 		return min;
 		
 	}
+	
+	public Shape rotateLeft (){
+		if(pieceShape == Tetronimos.SQUARE_SHAPE)
+			return this;
+		
+		Shape result = new Shape();
+		result.pieceShape = pieceShape;
+		
+		for(int i=0; i < X; i++){
+			result.setX(i,  y(i));
+			result.setY(i, -x(i));
+		}
+		
+		return result;
+	}
+	
+	public Shape rotateRight (){
+		if(pieceShape == Tetronimos.SQUARE_SHAPE)
+			return this;
+		
+		Shape result = new Shape();
+		result.pieceShape = pieceShape;
+		
+		for(int i=0; i < X; i++){
+			result.setX(i,  -y(i));
+			result.setY(i, x(i));
+		}
+		
+		return result;
+	}
+	
 	
 	
 	public int getX(){

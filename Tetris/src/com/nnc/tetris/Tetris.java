@@ -15,10 +15,8 @@ public class Tetris extends JFrame{
 		add(statusBar, BorderLayout.SOUTH);
 		Board board = new Board(this);
 		add(board);
-		
-		//add one piece
-		board.newPiece();
-		board.repaint();
+		//start lines down
+		board.start();
 		
 		setSize(200, 400);
 		setTitle("Tetris");
@@ -30,10 +28,11 @@ public class Tetris extends JFrame{
 		return statusBar;
 	}
 	
-	public void main(String[] args){
+	public static void main(String[] args){
 		Tetris tetris = new Tetris();
 		tetris.setLocationRelativeTo(null);
 		tetris.setVisible(true);
+		
 	}
 
 }
