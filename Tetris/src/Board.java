@@ -5,8 +5,6 @@ import java.util.Timer;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import Shape.Tetronimos;
-
 public class Board extends JPanel implements ActionListener{
 
 	private static final int BOARD_WIDTH = 10;
